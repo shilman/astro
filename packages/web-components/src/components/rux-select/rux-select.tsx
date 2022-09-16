@@ -131,6 +131,7 @@ export class RuxSelect implements FormFieldInterface {
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleLabelSlotChange = this._handleLabelSlotChange.bind(this)
+        this._isMenuOpen = this._isMenuOpen.bind(this)
     }
 
     componentWillLoad() {
@@ -268,16 +269,17 @@ export class RuxSelect implements FormFieldInterface {
         } else {
             this.value = values
         }
-
+        console.log('change')
         this.ruxSelectChanged.emit()
     }
 
-    private _onClick() {
-        const select = this.el.querySelector('select') as HTMLElement
-        if (!select.classList.contains('open')) {
-            select.classList.add('open')
+    private _isMenuOpen(e: Event) {
+        const target = e.target as HTMLSelectElement
+        //const select = this.el.querySelector('select') as HTMLElement
+        if (!target.classList.contains('open')) {
+            target.classList.add('open')
         } else {
-            select.classList.remove('open')
+            target.classList.remove('open')
         }
     }
 
@@ -334,7 +336,7 @@ export class RuxSelect implements FormFieldInterface {
                     multiple={multiple}
                     name={name}
                     onChange={(e) => this._onChange(e)}
-                    onClick={this._onClick}
+                    onClick={this._isMenuOpen}
                     onBlur={this._onBlur}
                     part="select"
                 ></select>
