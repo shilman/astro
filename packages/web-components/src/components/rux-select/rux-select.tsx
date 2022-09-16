@@ -272,6 +272,15 @@ export class RuxSelect implements FormFieldInterface {
         this.ruxSelectChanged.emit()
     }
 
+    private _onClick() {
+        const select = this.el.querySelector('select') as HTMLElement
+        if (!select.classList.contains('open')) {
+            select.classList.add('open')
+        } else {
+            select.classList.remove('open')
+        }
+    }
+
     render() {
         const {
             disabled,
@@ -325,6 +334,7 @@ export class RuxSelect implements FormFieldInterface {
                     multiple={multiple}
                     name={name}
                     onChange={(e) => this._onChange(e)}
+                    onClick={this._onClick}
                     onBlur={this._onBlur}
                     part="select"
                 ></select>

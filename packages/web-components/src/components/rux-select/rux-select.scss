@@ -84,6 +84,16 @@ label {
     background-position: center right 0.625rem, center left 0;
     background-repeat: no-repeat;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+    &.open {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.8877 15.3624L14.1252 12.1249C14.6127 11.6374 15.4002 11.6374 15.8877 12.1249L19.1252 15.3624C19.9127 16.1499 19.3502 17.4999 18.2377 17.4999H11.7627C10.6502 17.4999 10.1002 16.1499 10.8877 15.3624Z' fill='%234DACFF'/%3E%3C/svg%3E%0A"),
+            linear-gradient(
+                to left,
+                var(--color-background-surface-selected) 2rem,
+                var(--color-background-base-default) 2rem
+            );
+        background-position: center right var(--spacing-025), center left 0;
+        background-repeat: no-repeat;
+    }
     &:active:not(:disabled) {
         background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'),
             linear-gradient(
