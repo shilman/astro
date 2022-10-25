@@ -137,7 +137,6 @@ export class RuxPushButton {
                         'rux-push-button__button--icon-only': iconOnly,
                     }}
                     htmlFor={this.pushButtonId}
-                    role="button"
                 >
                     {icon ? (
                         <rux-icon

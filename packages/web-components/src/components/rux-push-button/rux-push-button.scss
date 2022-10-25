@@ -26,7 +26,7 @@
         position: absolute; //remove spacing while not affecting screenreaders
     }
 
-    label:focus-visible {
+    input:focus-visible + label {
         outline: 4px dashed hotpink !important;
     }
 
