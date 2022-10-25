@@ -26,6 +26,10 @@
         position: absolute; //remove spacing while not affecting screenreaders
     }
 
+    label:focus-visible {
+        outline: 4px dashed hotpink !important;
+    }
+
     .rux-push-button {
         &__button {
             font-family: var(--font-control-body-1-font-family);
