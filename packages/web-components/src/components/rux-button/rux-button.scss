@@ -45,8 +45,8 @@
         pointer-events: none;
     }
 
-    &:focus {
-        outline: none;
+    &:focus-visible {
+        outline: 2px double hotpink;
     }
 
     &:hover:not([disabled]) {

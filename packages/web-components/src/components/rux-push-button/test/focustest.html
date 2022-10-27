@@ -27,7 +27,7 @@
                 margin: 2rem auto;
             }
         </style>
-        <div style="padding: 10%; display: flex; justify-content: center">
+        <div style="padding: 10%; justify-content: center">
             <form id="form">
                 <rux-push-button
                     name="ruxPushButton"
@@ -46,27 +46,7 @@
                     checked
                 ></rux-push-button>
             </form>
-            <ul id="log"></ul>
-            <script>
-                const log = document.getElementById('log')
-                const form = document.getElementById('form')
-                form.addEventListener('submit', (e) => {
-                    event.preventDefault()
-                    // trigger formdata event
-                    new FormData(form)
-                })
-                form.addEventListener('formdata', (e) => {
-                    log.innerHTML = ''
-                    // Get the form data from the event object
-                    let data = e.formData
-                    const values = data.values()
-                    for (var value of data.entries()) {
-                        const item = document.createElement('li')
-                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
-                        log.appendChild(item)
-                    }
-                })
-            </script>
+            <rux-button>I am normal button</rux-button>
         </div>
     </body>
 </html>
