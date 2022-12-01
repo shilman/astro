@@ -1,3 +1,9 @@
 rux-menu-item:not(:defined) {
     visibility: hidden;
 }
+
+*:focus-visible {
+    border-radius: var(--focus-radius);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
+}

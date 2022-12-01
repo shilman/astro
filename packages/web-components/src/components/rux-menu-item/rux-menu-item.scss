@@ -32,4 +32,9 @@ a.rux-menu-item {
         background: var(--color-background-base-default);
         color: var(--color-text-interactive-default);
     }
+    &:focus-visible {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+    }
 }
