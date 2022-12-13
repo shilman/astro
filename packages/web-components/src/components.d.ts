@@ -12561,6 +12561,13 @@ export namespace Components {
          */
         "zoom": number;
     }
+    interface RuxTimestamp {
+        "time"?: string;
+        /**
+          * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
+         */
+        "timezone": string;
+    }
     interface RuxTrack {
         "columns": number;
         "end": string;
@@ -19313,6 +19320,12 @@ declare global {
         prototype: HTMLRuxTimelineElement;
         new (): HTMLRuxTimelineElement;
     };
+    interface HTMLRuxTimestampElement extends Components.RuxTimestamp, HTMLStencilElement {
+    }
+    var HTMLRuxTimestampElement: {
+        prototype: HTMLRuxTimestampElement;
+        new (): HTMLRuxTimestampElement;
+    };
     interface HTMLRuxTrackElement extends Components.RuxTrack, HTMLStencilElement {
     }
     var HTMLRuxTrackElement: {
@@ -20438,6 +20451,7 @@ declare global {
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
+        "rux-timestamp": HTMLRuxTimestampElement;
         "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
         "rux-tree-node": HTMLRuxTreeNodeElement;
@@ -33117,6 +33131,13 @@ declare namespace LocalJSX {
          */
         "zoom"?: number;
     }
+    interface RuxTimestamp {
+        "time"?: string;
+        /**
+          * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
+         */
+        "timezone"?: string;
+    }
     interface RuxTrack {
         "columns"?: number;
         "end"?: string;
@@ -34256,6 +34277,7 @@ declare namespace LocalJSX {
         "rux-textarea": RuxTextarea;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
+        "rux-timestamp": RuxTimestamp;
         "rux-track": RuxTrack;
         "rux-tree": RuxTree;
         "rux-tree-node": RuxTreeNode;
@@ -35371,6 +35393,7 @@ declare module "@stencil/core" {
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
+            "rux-timestamp": LocalJSX.RuxTimestamp & JSXBase.HTMLAttributes<HTMLRuxTimestampElement>;
             "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;
             "rux-tree-node": LocalJSX.RuxTreeNode & JSXBase.HTMLAttributes<HTMLRuxTreeNodeElement>;

@@ -227,24 +227,10 @@ export class RuxClock {
             <Host>
                 <div class="rux-clock" part="container">
                     {!this.hideDate && (
-                        <div class="rux-clock__segment">
-                            <div
-                                class="rux-clock__segment__value"
-                                aria-labelledby="rux-clock__day-of-year-label"
-                                part="date"
-                            >
-                                {this.dayOfYear.toString().padStart(3, '0')}
-                            </div>
-                            {!this.hideLabels && (
-                                <div
-                                    class="rux-clock__segment__label"
-                                    id="rux-clock__day-of-year-label"
-                                    part="date-label"
-                                >
-                                    Date
-                                </div>
-                            )}
-                        </div>
+                        <rux-timestamp small={this.small}>
+                            {this.dayOfYear.toString().padStart(3, '0')}
+                            {!this.hideLabels && <span slot="label">Date</span>}
+                        </rux-timestamp>
                     )}
 
                     <div class="rux-clock__segment">
