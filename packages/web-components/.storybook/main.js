@@ -12,4 +12,11 @@ module.exports = {
         '@astrouxds/storybook-addon-docs-stencil',
     ],
     staticDirs: ['../dist'],
+    docs: {
+        autodocs: true,
+    },
+    framework: {
+        name: '@storybook/web-components-webpack5',
+        options: {},
+    },
 }

@@ -20,10 +20,10 @@ export const Default = (args) => {
     return html`
 <div style="padding: 10%; display: flex; justify-content: center;">
     <rux-clock
-        .aos="${args.aos}"
+        aos="${args.aos}"
         .los="${args.los}"
         .timezone="${args.timezone}"
-        ?hide-timezone="${args.hideTimezone}"
+        hide-timezone="${args.hideTimezone}"
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
         ?small="${args.small}"
