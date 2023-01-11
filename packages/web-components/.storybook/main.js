@@ -1,6 +1,7 @@
 module.exports = {
     stories: [
-        '../src/stories/astro-uxds/welcome/StartHere.stories.mdx',
+        '../src/stories/astro-uxds/welcome/*.mdx',
+        '../src/stories/astro-uxds/*.mdx',
         '../src/stories/**/*.stories.mdx',
         '../src/stories/*.stories.@(js|jsx|ts|tsx)',
     ],
@@ -13,7 +14,7 @@ module.exports = {
     ],
     staticDirs: ['../dist'],
     docs: {
-        autodocs: true,
+        autodocs: false,
     },
     framework: {
         name: '@storybook/web-components-webpack5',
