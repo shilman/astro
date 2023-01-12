@@ -19,5 +19,17 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-tooltip message="Hey" delay="0">
+            <rux-icon icon="apps"></rux-icon>
+        </rux-tooltip>
+        <rux-button>Change delay</rux-button>
+        <script>
+            const btn = document.querySelector('rux-button')
+            const tip = document.querySelector('rux-tooltip')
+            btn.addEventListener('click', () => {
+                tip.delay = '1000'
+            })
+        </script>
+    </body>
 </html>
