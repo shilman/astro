@@ -1,5 +1,5 @@
 import themes from './theme'
-import { addDecorator } from '@storybook/web-components'
+import { useEffect } from '@storybook/addons'
 import {
     extractArgTypes,
     extractComponentDescription,
@@ -8,6 +8,24 @@ import {
 
 import docJson from '../docs.json'
 if (docJson) setStencilDocJson(docJson)
+
+export const decorators = [
+    (Story, context) => {
+        useEffect(() => {
+            const { kind, name, parameters } = context
+            // console.log(`Show Code: ${kind} - ${name}`)
+        }, [])
+
+        return Story()
+    },
+]
+
+function addListener() {
+    window.document.addEventListener('change', () => {
+        console.log('loaded!')
+    })
+}
+addListener()
 
 export const parameters = {
     viewport: {

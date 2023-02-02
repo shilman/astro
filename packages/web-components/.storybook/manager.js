@@ -1,7 +1,7 @@
 import themes from './theme'
 import { addons } from '@storybook/addons'
 import getClicks from './tagmanager'
-getClicks()
+// getClicks()
 
 addons.setConfig({
     panelPosition: 'right',
