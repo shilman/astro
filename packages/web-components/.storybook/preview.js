@@ -1,5 +1,5 @@
 import themes from './theme'
-import { useEffect } from '@storybook/addons'
+import { useEffect, useGlobals } from '@storybook/addons'
 import {
     extractArgTypes,
     extractComponentDescription,
@@ -12,13 +12,39 @@ if (docJson) setStencilDocJson(docJson)
 export const decorators = [
     (Story, context) => {
         useEffect(() => {
-            const { kind, name, parameters } = context
-            // console.log(`Show Code: ${kind} - ${name}`)
+            const { kind, name, parameters, viewMode } = context
+            const isInDocs = viewMode === 'docs'
+            console.log(`Show Code: ${kind} - ${name} - ${isInDocs}`)
+            console.log(context)
         }, [])
 
         return Story()
     },
 ]
+
+document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+        setMutationObserver()
+        console.log('I am loaded')
+    }
+}
+function setMutationObserver() {
+    const node = document.querySelector('#root')
+    console.log(node)
+
+    const config = { childList: true, subtree: true }
+
+    const callback = (mutationList) => {
+        if (mutationList) {
+            console.log('I am a callback')
+            console.log(mutationList)
+        }
+    }
+
+    const observer = new MutationObserver(callback)
+
+    observer.observe(node, config)
+}
 
 function addListener() {
     window.document.addEventListener('change', () => {

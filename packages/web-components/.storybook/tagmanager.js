@@ -7,7 +7,7 @@ export default function getClicks() {
             stories.forEach((story) => {
                 //listen for the show code button to be clicked
                 story.addEventListener('click', (e) => {
-                    console.log(e.currentTarget)
+                    // console.log(e.currentTarget)
                     //only run if the code isn't expanded
                     if (
                         e.target.classList.contains('docblock-code-toggle') &&
@@ -23,7 +23,7 @@ export default function getClicks() {
                         ) {
                             title = title.previousElementSibling
                         }
-                        console.log(title.textContent)
+                        // console.log(title.textContent)
                     }
                 })
             })
@@ -65,12 +65,12 @@ export default function getClicks() {
                             let currenth1 = docsRoot.querySelector(
                                 'h1:first-of-type'
                             ).id
-                            console.log(currenth1)
+                            // console.log(currenth1)
 
                             const subCallback = (secondMutationList) => {
                                 // check to see if mutations have occurred
                                 if (secondMutationList) {
-                                    console.log(secondMutationList)
+                                    // console.log(secondMutationList)
                                     // if so, reset the document title (component name)
                                     let newh1 = docsRoot.querySelector(
                                         'h1:first-of-type'
@@ -86,10 +86,10 @@ export default function getClicks() {
                                         ] = iframe.contentWindow.document.querySelectorAll(
                                             '.sbdocs-preview'
                                         )
-                                        console.log(
-                                            'here are the stories',
-                                            stories
-                                        )
+                                        // console.log(
+                                        //     'here are the stories',
+                                        //     stories
+                                        // )
                                         setStories(stories)
                                     }
                                 }
@@ -107,7 +107,7 @@ export default function getClicks() {
                             ] = iframe.contentWindow.document.querySelectorAll(
                                 '.sbdocs-preview'
                             )
-                            console.log('here are the stories', stories)
+                            //console.log('here are the stories', stories)
                             setStories(stories)
                         }
                     }
