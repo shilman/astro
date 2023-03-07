@@ -1,10 +1,10 @@
 {
-    "parserOptions": {
-        "project": "**/tsconfig.json"
-    },
-    "extends": ["plugin:@stencil/recommended"],
-    "rules": {
-        "@stencil/decorators-style": "off",
-        "@stencil/strict-boolean-conditions": "off"
-    }
+  "parserOptions": {
+    "project": "**/tsconfig.json"
+  },
+  "extends": ["plugin:@stencil/recommended", "plugin:storybook/recommended"],
+  "rules": {
+    "@stencil/decorators-style": "off",
+    "@stencil/strict-boolean-conditions": "off"
+  }
 }

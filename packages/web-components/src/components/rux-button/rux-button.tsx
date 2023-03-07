@@ -78,6 +78,7 @@ export class RuxButton {
     }
 
     render() {
+        throw new Error('ahahaha')
         const { size, iconOnly, secondary, disabled, icon, borderless } = this
         return (
             <Host>
